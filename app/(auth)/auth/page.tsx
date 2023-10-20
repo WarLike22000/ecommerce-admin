@@ -7,7 +7,7 @@ const AuthPage = async () => {
     
     return (
         <>
-            <AuthForm currentUser={currentUser} />
+            <AuthForm currentUser={currentUser!} />
         </>
     )
 }
