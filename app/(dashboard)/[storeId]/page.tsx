@@ -1,6 +1,5 @@
 import Card from '@/app/components/Card';
 import Heading from '@/app/components/Heading';
-import prisma from '@/app/libs/prismadb';
 
 import { FiDollarSign } from "react-icons/fi";
 import { AiOutlineCreditCard } from "react-icons/ai";
