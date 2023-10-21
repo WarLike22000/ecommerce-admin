@@ -1,4 +1,6 @@
-import { FiDollarSign } from "react-icons/fi";
+"use client"
+
+import { useEffect, useState } from "react";
 
 interface CardProps {
     title: string;
@@ -11,6 +13,17 @@ const Card: React.FC<CardProps> = ({
     value,
     icon
 }) => {
+
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+    
+    if(!isMounted) {
+        return null
+    }
+    
     return ( 
         <div className="w-full max-w-[250px] border rounded-md p-3">
             <div className="flex flex-row items-center justify-between space-y-0 pb-2">
