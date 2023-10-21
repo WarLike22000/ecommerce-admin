@@ -3,6 +3,7 @@ import Navbar from "@/app/components/Navbar";
 import prisma from '@/app/libs/prismadb';
 
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
 
 export default async function DashboardLayout({
     children,
@@ -40,8 +41,10 @@ export default async function DashboardLayout({
     
     return (
         <>
+        <Suspense fallback={<h1>Loader...</h1>}>
             <Navbar stores={stores} currentUser={currentUser} />
             {children}
+        </Suspense>
         </>
     )
 }
