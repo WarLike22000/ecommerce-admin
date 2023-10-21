@@ -29,7 +29,7 @@ const Select: React.FC<SelectProps> = ({
                     {label}
                 </label>
                 <Listbox.Button className="relative rounded-md p-2 w-full flex items-center justify-between border-[1px] border-gray-400">
-                    <p>{selected.label || selected.name}</p>
+                    <p>{selected?.label || selected?.name}</p>
                     <BiChevronDown size={17} />
                 </Listbox.Button>
 
