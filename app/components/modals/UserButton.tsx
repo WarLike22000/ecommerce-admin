@@ -8,6 +8,7 @@ import { MdOutlineManageAccounts } from "react-icons/md";
 import Modal from "../Modal";
 import Image from "next/image";
 import { signOut } from "next-auth/react";
+import { useParams, useRouter } from "next/navigation";
 
 interface UserButtonModal {
     currentUser?: User
@@ -18,6 +19,13 @@ const UserButton: React.FC<UserButtonModal> = ({
 }) => {
 
     const userModal = useUserModal();
+    const params = useParams();
+    const router = useRouter();
+    
+    const ManageClick = () => {
+        router.push(`/${params.storeId}/manage`);
+        userModal.onClose();
+    };
     
     return ( 
         <Modal
@@ -44,7 +52,7 @@ const UserButton: React.FC<UserButtonModal> = ({
                 </div>
 
                 <div className="w-full">
-                    <div className="flex gap-4 items-center text-gray-600 text-sm hover:bg-gray-200 transition rounded-md p-3 cursor-pointer">
+                    <div onClick={ManageClick} className="flex gap-4 items-center text-gray-600 text-sm hover:bg-gray-200 transition rounded-md p-3 cursor-pointer">
                         <MdOutlineManageAccounts size={20} />
                         <p>
                             Manage account

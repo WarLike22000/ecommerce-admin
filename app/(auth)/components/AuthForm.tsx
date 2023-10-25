@@ -129,7 +129,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
     return ( 
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex items-center justify-center h-full"
+            className="flex items-center justify-center h-[100vh]"
         >
             <div className="bg-white shadow-lg sm:px-6 px-4 py-4 w-full sm:max-w-md space-y-5 rounded-lg mx-2 border-[1px]">
                 <div className="w-full">
@@ -164,7 +164,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
                     </div>
                 </div>
 
-                <div className="w-full space-y-5">
+                <div className="w-full">
                     {variant === "REGISTER" && (
                         <Input
                         label="Name"
